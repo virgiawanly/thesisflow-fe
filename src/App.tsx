@@ -1,9 +1,28 @@
+import { Toaster } from "@/components/ui/sonner";
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router-dom";
+import { LoadingBarContainer } from "react-top-loading-bar";
+import { AuthProvider } from "./providers/auth-provider";
+import { ThemeProvider } from "./providers/theme-provider";
+import { createAppRoutes } from "./routing/app-routing";
+
+const { BASE_URL } = import.meta.env;
+
 export function App() {
+  const router = createBrowserRouter(createAppRoutes(), {
+    basename: BASE_URL,
+  });
+
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="font-medium">Hello World</div>
-    </div>
-  )
+    <ThemeProvider>
+      <AuthProvider>
+        <LoadingBarContainer>
+          <Toaster />
+          <RouterProvider router={router} />
+        </LoadingBarContainer>
+      </AuthProvider>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;

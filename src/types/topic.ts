@@ -16,7 +16,7 @@ export interface TopicOffer {
   prasyarat: string | null;
   kuota: number;
   bidang_id: number;
-  bidang?: FieldTaxonomy;
+  field?: FieldTaxonomy;
   status: TopicOfferStatus;
   created_at?: string | null;
   updated_at?: string | null;

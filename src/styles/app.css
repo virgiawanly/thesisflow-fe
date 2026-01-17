@@ -1,3 +1,12 @@
 .app-container {
   @apply mx-auto max-w-[1200px] px-3 md:px-4 lg:px-6 xl:px-8;
 }
+
+.react-select__control {
+  @apply !border-border !rounded-none;
+}
+
+.react-select__placeholder,
+.react-select-5-placeholder {
+  @apply !text-muted-foreground;
+}

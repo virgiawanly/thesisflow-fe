@@ -156,6 +156,10 @@ const TopicOfferFormFields = ({ control, isSubmitting }: TopicOfferFormFieldsPro
                   <FormControl>
                     <CreatableSelect
                       isMulti
+                      classNames={{
+                        control: () => "!rounded-none !border-border",
+                        indicatorSeparator: () => "hidden",
+                      }}
                       value={options}
                       onChange={(newValue) => {
                         const keywords = newValue.map((item: { value: string; label: string }) => item.value);
@@ -182,12 +186,6 @@ const TopicOfferFormFields = ({ control, isSubmitting }: TopicOfferFormFieldsPro
                       styles={{
                         control: (base: any) => ({
                           ...base,
-                          minHeight: "40px",
-                          borderColor: "hsl(var(--input))",
-                          backgroundColor: "hsl(var(--background))",
-                          "&:hover": {
-                            borderColor: "hsl(var(--input))",
-                          },
                         }),
                         multiValue: (base: any) => ({
                           ...base,
@@ -196,6 +194,10 @@ const TopicOfferFormFields = ({ control, isSubmitting }: TopicOfferFormFieldsPro
                         multiValueLabel: (base: any) => ({
                           ...base,
                           color: "hsl(var(--secondary-foreground))",
+                        }),
+                        input: (provided) => ({
+                          ...provided,
+                          color: "hsl(var(--foreground))",
                         }),
                         multiValueRemove: (base: any) => ({
                           ...base,

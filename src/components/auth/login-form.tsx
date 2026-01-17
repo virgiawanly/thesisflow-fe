@@ -127,6 +127,7 @@ export function LoginForm({
                         <FormControl>
                           <Input
                             placeholder="Enter password"
+                            autoComplete="off"
                             type={passwordVisible ? "text" : "password"}
                             {...field}
                           />

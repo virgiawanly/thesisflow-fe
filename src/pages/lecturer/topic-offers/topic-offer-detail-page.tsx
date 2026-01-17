@@ -140,7 +140,7 @@ const LecturerTopicOfferDetailPage = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-2">
                   <div className="font-medium text-foreground">Bidang</div>
-                  <div className="text-foreground">{data.bidang?.nama || "-"}</div>
+                  <div className="text-foreground">{data.field?.nama || "-"}</div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-2">
